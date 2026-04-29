@@ -434,12 +434,10 @@
     const phone = onlyNumbers(document.getElementById('phone').value);
     const grade = document.getElementById('grade').value;
     const businessNumber = '5581988057613';
-    const message = `Olá! Sou ${name}. Quero receber a revisão gratuita de Matemática para ${grade}. Meu WhatsApp é ${phone}.`;
+    const message = `Oi, vim pelo site e quero ajudar meu filho em Matemática. Sou ${name}, responsável por um aluno do ${grade}. Meu WhatsApp é ${phone}.`;
     const url = `https://wa.me/${businessNumber}?text=${encodeURIComponent(message)}`;
     document.getElementById('msg').style.display = 'inline';
     setTimeout(() => { window.location.href = url; }, 500);
   }
 </script></body>
-</html>
-
-  
+                                                                                                                                                                                                              </html>
