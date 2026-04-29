@@ -1,666 +1,418 @@
-                <!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Matemática Fácil | Revisão Gratuita 6º Ano</title>
-  <meta name="description" content="Receba uma revisão gratuita de Matemática do 6º ano pelo WhatsApp." />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
-
-  <style>
+  <meta name="description" content="Seu filho pode destravar Matemática com uma explicação simples e direta pelo WhatsApp." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />  <style>
     :root {
-      --primary: #6d3df5;
       --yellow: #ffd400;
       --green: #25d366;
-      --dark: #101828;
+      --dark: #050b12;
+      --dark-2: #101828;
       --muted: #667085;
       --line: #e7ecf3;
+      --soft: #f7f8fa;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      color: var(--dark);
-      background: linear-gradient(180deg, #fbfdff, #ffffff, #f7fbff);
+      margin: 0;
+      color: var(--dark-2);
+      background: var(--soft);
     }
 
-    .container { max-width: 1140px; }
+    .container { max-width: 1180px; }
 
     nav.container-fluid {
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(255,255,255,.95);
-      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--line);
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: .6rem;
+      gap: .7rem;
       font-weight: 900;
+      color: var(--dark-2);
     }
 
     .logo {
-      width: 38px;
-      height: 38px;
+      width: 42px;
+      height: 42px;
       display: grid;
       place-items: center;
-      border-radius: 14px;
+      border-radius: 15px;
       background: var(--yellow);
-      color: #1b2559;
+      color: #101828;
+      font-weight: 950;
+    }
+
+    .nav-btn {
+      background: var(--green) !important;
+      border-color: var(--green) !important;
+      color: white !important;
       font-weight: 900;
+      border-radius: 14px;
+    }
+
+    .hero-wrap {
+      background: radial-gradient(circle at 18% 20%, rgba(37,211,102,.18), transparent 28%), radial-gradient(circle at 90% 35%, rgba(255,212,0,.22), transparent 30%), linear-gradient(135deg, #050b12, #07111f 55%, #120900);
+      color: white;
+      overflow: hidden;
     }
 
     .hero {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 2.5rem;
       align-items: center;
-      padding: 4rem 0;
-    }
-
-    h1 {
-      font-size: clamp(2.3rem, 6vw, 5rem);
-      line-height: 1;
-      letter-spacing: -.04em;
-    }
-
-    .mark {
-      background: linear-gradient(180deg, transparent 55%, var(--yellow) 55%);
-    }
-
-    .lead {
-      font-size: 1.2rem;
-      color: var(--muted);
+      padding: 4.8rem 0;
     }
 
     .eyebrow {
-      display: inline-block;
-      padding: .5rem .9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .6rem 1rem;
       border-radius: 999px;
-      background: #fff7cf;
-      font-weight: 800;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.16);
+      color: white;
+      font-weight: 850;
+      margin-bottom: 1.3rem;
+    }
+
+    h1 {
+      color: white;
+      font-size: clamp(2.45rem, 6vw, 5.35rem);
+      line-height: .97;
+      letter-spacing: -.06em;
+      margin-bottom: 1.4rem;
+    }
+
+    .yellow { color: var(--yellow); }
+
+    .lead {
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      color: rgba(255,255,255,.82);
+      max-width: 620px;
+    }
+
+    .cta-main {
+      margin-top: 1.6rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .8rem;
+      background: var(--green) !important;
+      border-color: var(--green) !important;
+      color: white !important;
+      font-weight: 950;
+      border-radius: 18px;
+      padding: 1rem 1.4rem;
+      box-shadow: 0 0 36px rgba(37,211,102,.35);
+      transition: .2s ease;
+    }
+
+    .cta-main:hover { transform: translateY(-2px) scale(1.01); }
+    .cta-main small { display: block; font-weight: 600; opacity: .9; }
+
+    .secure {
+      margin-top: 1rem;
+      color: rgba(255,255,255,.78);
+      font-weight: 700;
+      font-size: .92rem;
+    }
+
+    .cinema-card {
+      min-height: 455px;
+      border-radius: 32px;
+      padding: .8rem;
+      border: 1px solid rgba(255,255,255,.13);
+      background: rgba(255,255,255,.06);
+      box-shadow: 0 30px 90px rgba(0,0,0,.35);
+      backdrop-filter: blur(10px);
+    }
+
+    .split-scene {
+      min-height: 430px;
+      overflow: hidden;
+      border-radius: 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .scene {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.4rem;
+    }
+
+    .scene.before {
+      background: radial-gradient(circle at 50% 35%, rgba(59,130,246,.48), transparent 33%), linear-gradient(180deg, #07111f, #02050a);
+    }
+
+    .scene.after {
+      background: radial-gradient(circle at 50% 35%, rgba(255,212,0,.50), transparent 36%), linear-gradient(180deg, #2b1600, #110800);
+      border-left: 2px solid rgba(255,212,0,.85);
+    }
+
+    .tag {
+      display: inline-block;
+      width: fit-content;
+      border-radius: 999px;
+      padding: .25rem .7rem;
+      font-size: .82rem;
+      font-weight: 900;
+      background: rgba(255,255,255,.12);
+      color: white;
+    }
+
+    .scene h3 { color: white; font-size: 1.55rem; margin: .8rem 0 .4rem; }
+    .scene p { color: rgba(255,255,255,.70); margin: 0; }
+    .after h3 { color: #ffe58a; }
+
+    .section { padding: 4.5rem 0; }
+
+    .center {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 2rem;
+    }
+
+    .center h2,
+    .section h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1;
+      letter-spacing: -.04em;
+      color: var(--dark-2);
+    }
+
+    .grid-2, .grid-3, .grid-4 {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+    .card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 1.4rem;
+      box-shadow: 0 18px 45px rgba(16,24,40,.06);
+    }
+
+    .pain-card { background: linear-gradient(135deg, #ffffff, #fff7e6); }
+
+    .pain-list p {
+      display: flex;
+      gap: .8rem;
+      align-items: flex-start;
+      font-size: 1.05rem;
       margin-bottom: 1rem;
     }
 
-    .trust {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: .7rem;
-      margin-top: 1rem;
-    }
-
-    .trust div {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: .8rem;
-      text-align: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,.05);
-    }
-
-    .trust strong {
-      display: block;
-      color: var(--primary);
-      font-size: 1.25rem;
-    }
-
-    .hero-card {
-      background: white;
-      border-radius: 28px;
-      padding: 1rem;
-      box-shadow: 0 20px 55px rgba(0,0,0,.12);
-      border: 1px solid var(--line);
-    }
-
-    .visual {
-      min-height: 280px;
-      border-radius: 22px;
-      background: linear-gradient(135deg, #6d3df5, #8b5cf6, #0ea5e9);
+    .icon {
+      width: 44px;
+      height: 44px;
       display: grid;
       place-items: center;
-      text-align: center;
-      color: white;
-      padding: 2rem;
+      border-radius: 14px;
+      background: #fff3bf;
+      color: #101828;
+      font-size: 1.3rem;
+      margin-bottom: .9rem;
     }
 
-    .visual h2,
-    .visual p {
-      color: white;
+    .green-card { background: linear-gradient(135deg, #ecfdf3, white); }
+    .quote-card { background: #fff8df; }
+
+    .check p {
+      display: flex;
+      gap: .6rem;
+      align-items: center;
+      margin-bottom: .7rem;
     }
+
+    .check span { color: #16a34a; font-weight: 950; }
+
+    .math-paper {
+      background: #fff8df;
+      border-radius: 22px;
+      padding: 2rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: clamp(1.45rem, 3vw, 2rem);
+      line-height: 2;
+    }
+
+    .offer {
+      background: radial-gradient(circle at 80% 20%, rgba(37,211,102,.22), transparent 25%), linear-gradient(135deg, #050b12, #07111f);
+      color: white;
+      border-radius: 32px;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1.5rem;
+      align-items: center;
+      box-shadow: 0 24px 70px rgba(0,0,0,.18);
+    }
+
+    .offer h2, .offer p { color: white; margin-bottom: .4rem; }
+    .gift { font-size: 4.5rem; }
 
     .form-box {
       margin-top: 1rem;
-      padding: 1.2rem;
-      border-radius: 22px;
-      background: linear-gradient(135deg, #6d3df5, #7c3aed);
-      color: white;
-    }
-
-    .form-box h3,
-    .form-box p {
-      color: white;
+      padding: 1.3rem;
+      border-radius: 24px;
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 45px rgba(16,24,40,.08);
     }
 
     .form-box input,
     .form-box select {
-      background: white;
+      background: #f8fafc;
+      border: 1px solid var(--line);
       color: #101828;
     }
 
     .form-box button {
-      background: var(--yellow);
-      border-color: var(--yellow);
-      color: #101828;
-      font-weight: 900;
-    }
-
-    .section {
-      padding: 4rem 0;
-    }
-
-    .center {
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto 2rem;
-    }
-
-    .grid-3,
-    .grid-4,
-    .plans {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .grid-3 { grid-template-columns: repeat(3, 1fr); }
-    .grid-4 { grid-template-columns: repeat(4, 1fr); }
-    .plans { grid-template-columns: repeat(2, 1fr); }
-
-    .card,
-    .plan,
-    .testimonial,
-    .faq details,
-    .quiz-box {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 1.2rem;
-      box-shadow: 0 14px 35px rgba(0,0,0,.06);
-    }
-
-    .problem { background: #fff7f7; border-color: #ffd4d4; }
-    .solution { background: #f0fdf4; border-color: #bbf7d0; }
-
-    .offer {
-      border-radius: 28px;
-      padding: 2rem;
-      background: linear-gradient(135deg, #101828, #5b21b6, #0ea5e9);
-      color: white;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 1rem;
-      align-items: center;
-    }
-
-    .offer h2,
-    .offer p {
-      color: white;
-    }
-
-    .offer a {
-      background: var(--yellow);
-      border-color: var(--yellow);
-      color: #101828;
-      font-weight: 900;
-    }
-
-    .countdown span {
-      display: inline-block;
-      margin: .2rem;
-      padding: .45rem .7rem;
-      border-radius: 12px;
-      background: rgba(255,255,255,.18);
-      color: white;
-      font-weight: 900;
-    }
-
-    .plan.featured {
-      border: 2px solid var(--primary);
-    }
-
-    .price {
-      font-size: 2rem;
-      font-weight: 900;
-      color: var(--primary);
-    }
-
-    .stars { color: #f5a400; }
-
-    .quiz-option {
       width: 100%;
-      text-align: left;
-      margin-bottom: .5rem;
-      background: white;
-      color: #101828;
-      border: 1px solid var(--line);
+      background: var(--green);
+      border-color: var(--green);
+      color: white;
+      font-weight: 950;
+      border-radius: 16px;
     }
 
-    .quiz-option.correct {
-      background: #dcfce7;
-      color: #166534;
+    .mini-proof {
+      color: var(--muted);
+      font-size: .92rem;
+      margin-top: .8rem;
     }
 
-    .quiz-option.wrong {
-      background: #fee2e2;
-      color: #991b1b;
-    }
+    footer { padding: 1rem 0 6rem; }
 
     .sticky-cta {
       position: fixed;
       left: 50%;
       bottom: 16px;
       transform: translateX(-50%);
-      width: min(94%, 520px);
+      width: min(94%, 680px);
       z-index: 99;
-      background: #101828;
+      background: #050b12;
       color: white;
-      border-radius: 999px;
-      padding: .7rem;
+      border-radius: 22px;
+      padding: .85rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: .7rem;
+      gap: .8rem;
+      box-shadow: 0 18px 60px rgba(0,0,0,.28);
     }
 
     .sticky-cta a {
       margin: 0;
       background: var(--green);
       border-color: var(--green);
+      color: white;
+      font-weight: 900;
+      border-radius: 14px;
     }
 
-    footer {
-      padding-bottom: 6rem;
-    }
-
-    @media (max-width: 800px) {
-      .hero,
-      .offer {
+    @media (max-width: 860px) {
+      .hero, .grid-2, .grid-3, .grid-4, .offer {
         grid-template-columns: 1fr;
       }
-
-      .grid-3,
-      .grid-4,
-      .plans,
-      .trust {
-        grid-template-columns: 1fr;
-      }
-
-      .sticky-cta {
-        flex-direction: column;
-        border-radius: 20px;
-        text-align: center;
-      }
-
-      .sticky-cta a {
-        width: 100%;
-      }
+      .hero { padding: 3rem 0; }
+      .cinema-card { min-height: auto; }
+      .split-scene { min-height: 320px; }
+      .sticky-cta { flex-direction: column; text-align: center; }
+      .sticky-cta a { width: 100%; }
     }
-  </style>
-</head>
-
-<body>
-
-<nav class="container-fluid">
-  <ul>
-    <li>
-      <span class="brand">
-        <span class="logo">MF</span>
-        Matemática Fácil
-      </span>
-    </li>
-  </ul>
-  <ul>
-    <li><a href="#formulario" role="button">Receber grátis</a></li>
-  </ul>
-</nav>
-
-<main class="container">
-
-  <section class="hero">
-    <div>
-      <span class="eyebrow">🎁 Revisão gratuita para alunos do 6º ano</span>
-
-      <h1>
-        Seu filho pode sair da dificuldade em
-        <span class="mark">Matemática</span>
-        em poucos dias.
-      </h1>
-
-      <p class="lead">
-        Receba no WhatsApp uma revisão simples, com explicação fácil,
-        exercícios resolvidos e material para estudar sem sofrimento.
-      </p>
-
-      <ul>
-        <li>✅ Ideal para quem fica perdido nas aulas</li>
-        <li>✅ Ajuda antes de provas e atividades</li>
-        <li>✅ Conteúdo simples para estudar pelo celular</li>
-      </ul>
-
-      <div class="trust">
-        <div><strong>+1.200</strong><small>alunos ajudados</small></div>
-        <div><strong>4.9/5</strong><small>satisfação</small></div>
-        <div><strong>6º ano</strong><small>conteúdo focado</small></div>
-      </div>
-    </div>
-
-    <aside class="hero-card" id="formulario">
-      <div class="visual">
-        <div>
-          <h2>Matemática sem medo</h2>
-          <p>Aulas curtas + exercícios + revisão</p>
-        </div>
-      </div>
-
-      <article class="form-box">
-        <h3>Receba a revisão gratuita agora</h3>
-        <p>Preencha e seja direcionado para o WhatsApp.</p>
-
-        <form onsubmit="sendWhatsApp(event)">
-          <input type="text" id="name" placeholder="Nome do responsável" required>
-          <input type="tel" id="phone" placeholder="WhatsApp com DDD" required>
-
-          <select id="grade" required>
-            <option value="">Série do aluno</option>
-            <option>6º ano</option>
-            <option>7º ano</option>
-            <option>8º ano</option>
-            <option>9º ano</option>
-          </select>
-
-          <button type="submit">👉 Quero receber agora</button>
-        </form>
-
-        <small id="msg" style="display:none;color:white;font-weight:900;">
-          Abrindo WhatsApp...
-        </small>
-      </article>
-    </aside>
-  </section>
-
-  <section class="section">
-    <div class="center">
-      <h2>Seu filho passa por isso?</h2>
-      <p>Quando a base de Matemática falha, o aluno acumula dúvidas e perde confiança.</p>
-    </div>
-
-    <div class="grid-3">
-      <article class="card problem">
-        <h3>😟 Não entende a explicação</h3>
-        <p>O professor passa a matéria, mas em casa ele não sabe por onde começar.</p>
-      </article>
-
-      <article class="card problem">
-        <h3>📉 Vai mal nas provas</h3>
-        <p>Mesmo estudando, erra questões por falta de prática.</p>
-      </article>
-
-      <article class="card problem">
-        <h3>😤 Briga para estudar</h3>
-        <p>Matemática vira sofrimento para o aluno e preocupação para os pais.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="center">
-      <h2>Como a revisão ajuda</h2>
-      <p>Uma forma simples e direta de revisar os principais conteúdos do 6º ano.</p>
-    </div>
-
-    <div class="grid-4">
-      <article class="card solution">
-        <h3>🎥 Aulas curtas</h3>
-        <p>Explicações rápidas para entender sem enrolação.</p>
-      </article>
-
-      <article class="card solution">
-        <h3>🧠 Exercícios resolvidos</h3>
-        <p>Passo a passo para aprender o raciocínio certo.</p>
-      </article>
-
-      <article class="card solution">
-        <h3>📄 Material em PDF</h3>
-        <p>Resumo para estudar no celular ou imprimir.</p>
-      </article>
-
-      <article class="card solution">
-        <h3>📱 Recebe no WhatsApp</h3>
-        <p>Rápido, simples e fácil para o responsável acessar.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="offer">
+  </style></head><body><nav class="container-fluid">
+  <ul><li><span class="brand"><span class="logo">MF</span>Matemática Fácil</span></li></ul>
+  <ul><li><a href="#formulario" role="button" class="nav-btn">Receber grátis</a></li></ul>
+</nav><header class="hero-wrap">
+  <main class="container">
+    <section class="hero">
       <div>
-        <h2>Material gratuito por tempo limitado</h2>
-        <p>Receba a revisão inicial e veja se o método combina com seu filho.</p>
-
-        <div class="countdown">
-          <span id="hours">00h</span>
-          <span id="minutes">00m</span>
-          <span id="seconds">00s</span>
-        </div>
+        <span class="eyebrow">🎁 Revisão gratuita para alunos do 6º ano</span>
+        <h1>Seu filho não está com dificuldade em Matemática. <span class="yellow">Ele só nunca teve uma explicação que realmente fizesse sentido.</span></h1>
+        <p class="lead">Em poucos minutos, ele pode finalmente entender o que antes parecia impossível — sem pressão, sem travar.</p>
+        <a href="#formulario" role="button" class="cta-main">💬 <span>Quero ver meu filho entendendo<small>Leva menos de 1 minuto para começar</small></span></a>
+        <p class="secure">🔒 É rápido, gratuito e 100% pelo WhatsApp</p>
       </div>
-
-      <a href="#formulario" role="button">Garantir revisão</a>
-    </div>
-  </section>
-
+      <aside class="cinema-card">
+        <div class="split-scene">
+          <div class="scene before"><span class="tag">Antes</span><h3>“Não entendo nada...”</h3><p>Confusão, insegurança e vontade de desistir.</p></div>
+          <div class="scene after"><span class="tag">Depois</span><h3>“Agora faz sentido!”</h3><p>Clareza, confiança e uma pequena vitória.</p></div>
+        </div>
+      </aside>
+    </section>
+  </main>
+</header><main class="container">
   <section class="section">
-    <div class="center">
-      <h2>Teste rápido de Matemática</h2>
-      <p>Uma pequena interação para mostrar como o aluno pode praticar.</p>
+    <div class="grid-2">
+      <article class="card"><h2>Se você já viu seu filho:</h2><div class="pain-list"><p>😟 olhando o caderno sem saber por onde começar</p><p>✏️ apagando mais do que escrevendo</p><p>💬 dizendo “não entendi nada”</p></div></article>
+      <article class="card pain-card"><h2>Você sabe o quanto isso pesa.</h2><p><strong>E não é falta de esforço.</strong></p><p>A maioria dos alunos não tem dificuldade. Eles só nunca tiveram clareza.</p><p><strong style="color:#c48a00;">E quando a clareza aparece, a confiança vem junto.</strong></p></article>
     </div>
-
-    <article class="quiz-box">
-      <h3>Qual fração representa metade de uma pizza?</h3>
-
-      <button class="quiz-option" onclick="checkAnswer(this, false)">1/3</button>
-      <button class="quiz-option" onclick="checkAnswer(this, true)">1/2</button>
-      <button class="quiz-option" onclick="checkAnswer(this, false)">2/3</button>
-      <button class="quiz-option" onclick="checkAnswer(this, false)">3/4</button>
-
-      <p id="quizFeedback"></p>
-    </article>
-  </section>
-
-  <section class="section">
-    <div class="center">
-      <h2>Pais aprovam</h2>
+  </section>  <section class="section">
+    <div class="center"><h2>Como funciona</h2><p>Uma experiência simples para gerar a primeira sensação de “agora eu entendi”.</p></div>
+    <div class="grid-4">
+      <article class="card"><div class="icon">💬</div><h3>Você recebe no WhatsApp</h3><p>Explicações simples e diretas, pensadas para o 6º ano.</p></article>
+      <article class="card"><div class="icon">📄</div><h3>Conteúdo que faz sentido</h3><p>Exercícios resolvidos e passo a passo sem confusão.</p></article>
+      <article class="card"><div class="icon">🎯</div><h3>Seu filho entende</h3><p>Ele aprende, pratica e tira dúvidas com clareza.</p></article>
+      <article class="card"><div class="icon">⭐</div><h3>Confiança que transforma</h3><p>Em poucos minutos, ele ganha segurança e autonomia.</p></article>
     </div>
-
+  </section>  <section class="section">
     <div class="grid-3">
-      <article class="testimonial">
-        <div class="stars">★★★★★</div>
-        <p>“Meu filho finalmente entendeu frações.”</p>
-        <strong>Mãe de aluno</strong>
-      </article>
-
-      <article class="testimonial">
-        <div class="stars">★★★★★</div>
-        <p>“A revisão ajudou muito antes da prova.”</p>
-        <strong>Responsável</strong>
-      </article>
-
-      <article class="testimonial">
-        <div class="stars">★★★★★</div>
-        <p>“Simples, direto e fácil de acompanhar.”</p>
-        <strong>Pai de aluna</strong>
-      </article>
+      <article class="card green-card"><h2>Em poucos minutos, seu filho pode:</h2><div class="check"><p><span>✓</span> entender um conteúdo que antes travava</p><p><span>✓</span> acertar sozinho</p><p><span>✓</span> ganhar confiança</p></div><h3 style="color:#16a34a;">E isso muda tudo.</h3></article>
+      <article class="card quote-card"><h2 style="color:#eab308;">“</h2><p><strong>Alunos que antes travavam em operações básicas conseguiram resolver sozinhos após o primeiro contato.</strong></p><p>Porque não é sobre estudar mais. É sobre entender certo.</p></article>
+      <article class="card"><div class="math-paper"><p>35 + 17 = 52 ✓</p><p>72 - 28 = 44 ✓</p><p>9 × 6 = 54 ✓</p></div></article>
     </div>
-  </section>
-
-  <section class="section" id="planos">
-    <div class="center">
-      <h2>Depois da revisão gratuita</h2>
-      <p>O responsável pode continuar com materiais completos.</p>
-    </div>
-
-    <div class="plans">
-      <article class="plan featured">
-        <h3>Plano Completo</h3>
-        <p class="price">R$19,90 <small>/ mês</small></p>
-
-        <ul>
-          <li>Todas as revisões do 6º ano</li>
-          <li>Exercícios resolvidos</li>
-          <li>PDFs de apoio</li>
-          <li>Simulados para prova</li>
-        </ul>
-
-        <a href="#formulario" role="button">Quero começar</a>
-      </article>
-
-      <article class="plan">
-        <h3>Plano Família</h3>
-        <p class="price">R$29,90 <small>/ mês</small></p>
-
-        <ul>
-          <li>Acesso para até 2 alunos</li>
-          <li>Conteúdo completo</li>
-          <li>Relatório para responsáveis</li>
-          <li>Materiais extras</li>
-        </ul>
-
-        <a href="#formulario" class="secondary" role="button">Conhecer família</a>
-      </article>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="center">
-      <h2>Perguntas frequentes</h2>
-    </div>
-
-    <div class="faq">
-      <details open>
-        <summary>O material gratuito é realmente grátis?</summary>
-        <p>Sim. A revisão inicial é gratuita e enviada pelo WhatsApp.</p>
-      </details>
-
-      <details>
-        <summary>Como recebo o conteúdo?</summary>
-        <p>Você preenche o formulário e abre uma conversa no WhatsApp com a mensagem pronta.</p>
-      </details>
-
-      <details>
-        <summary>É só para o 6º ano?</summary>
-        <p>O foco principal é o 6º ano, mas pode ser expandido para outras séries.</p>
-      </details>
-    </div>
-  </section>
-
-</main>
-
-<section aria-label="Subscribe example">
-  <div class="container">
-    <article>
-      <hgroup>
-        <h2>Receba também por email</h2>
-        <h3>Cadastre-se para receber novidades e listas gratuitas.</h3>
-      </hgroup>
-
-      <form class="grid" onsubmit="event.preventDefault(); alert('Cadastro recebido!');">
-        <input type="text" placeholder="Nome" required>
-        <input type="email" placeholder="Email" required>
-        <button type="submit">Cadastrar</button>
+  </section>  <section class="section" id="formulario">
+    <div class="offer"><div class="gift">🎁</div><div><h2>Essa é a primeira experiência de destravamento em Matemática.</h2><p>Simples. Direto. E feito para funcionar.</p></div><a href="#lead-form" role="button" class="cta-main">Quero receber agora</a></div>
+    <article class="form-box" id="lead-form">
+      <h2>Receba a revisão gratuita no WhatsApp</h2>
+      <p>Preencha os dados e abra uma conversa com a mensagem pronta.</p>
+      <form onsubmit="sendWhatsApp(event)">
+        <input type="text" id="name" placeholder="Nome do responsável" required>
+        <input type="tel" id="phone" placeholder="WhatsApp com DDD" required>
+        <select id="grade" required><option value="">Série do aluno</option><option>6º ano</option><option>7º ano</option><option>8º ano</option><option>9º ano</option></select>
+        <button type="submit">💬 Quero ver meu filho entendendo</button>
       </form>
+      <small id="msg" style="display:none;color:#16a34a;font-weight:900;">Abrindo WhatsApp...</small>
+      <p class="mini-proof">🔒 Seus dados ficam seguros. Atendimento direto pelo WhatsApp.</p>
     </article>
-  </div>
-</section>
-
-<footer class="container">
-  <small>
-    <strong>Matemática Fácil</strong><br>
-    <a href="#">Sobre</a> •
-    <a href="#">Contato</a> •
-    <a href="#">Política de privacidade</a>
-  </small>
-</footer>
-
-<div class="sticky-cta">
-  <span>🎁 Revisão gratuita no WhatsApp</span>
-  <a href="#formulario" role="button">Receber agora</a>
-</div>
-
-<script>
+  </section>  <section class="section"><div class="grid-4"><article class="card"><h3>🛡️ Seguro e confiável</h3><p>Seus dados protegidos com segurança.</p></article><article class="card"><h3>⏱️ Rápido e prático</h3><p>Tudo direto no WhatsApp, sem complicação.</p></article><article class="card"><h3>⭐ Focado no 6º ano</h3><p>Conteúdo alinhado com o que seu filho precisa aprender.</p></article><article class="card"><h3>❤️ Feito com propósito</h3><p>Acreditamos que todo aluno pode entender Matemática.</p></article></div></section>
+</main><footer class="container"><small><strong>Matemática Fácil</strong><br><a href="#formulario">Receber revisão</a> • <a href="#">Contato</a> • <a href="#">Política de privacidade</a></small></footer><div class="sticky-cta"><span>🎁 Revisão gratuita no WhatsApp</span><a href="#formulario" role="button">Receber agora</a></div><script>
   function onlyNumbers(value) {
     return value.replace(/\D/g, '');
   }
 
   function sendWhatsApp(event) {
     event.preventDefault();
-
     const name = document.getElementById('name').value.trim();
     const phone = onlyNumbers(document.getElementById('phone').value);
     const grade = document.getElementById('grade').value;
-
     const businessNumber = '5581988057613';
-
-    const message =
-      `Olá! Sou ${name}. Quero receber a revisão gratuita de Matemática para ${grade}. Meu WhatsApp é ${phone}.`;
-
+    const message = `Olá! Sou ${name}. Quero receber a revisão gratuita de Matemática para ${grade}. Meu WhatsApp é ${phone}.`;
     const url = `https://wa.me/${businessNumber}?text=${encodeURIComponent(message)}`;
-
     document.getElementById('msg').style.display = 'inline';
-
-    setTimeout(() => {
-      window.location.href = url;
-    }, 700);
+    setTimeout(() => { window.location.href = url; }, 500);
   }
-
-  function updateCountdown() {
-    const now = new Date();
-    const end = new Date();
-    end.setHours(23, 59, 59, 999);
-
-    const diff = Math.max(0, end - now);
-
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-
-    document.getElementById('hours').textContent = `${String(hours).padStart(2, '0')}h`;
-    document.getElementById('minutes').textContent = `${String(minutes).padStart(2, '0')}m`;
-    document.getElementById('seconds').textContent = `${String(seconds).padStart(2, '0')}s`;
-  }
-
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-
-  function checkAnswer(button, isCorrect) {
-    const buttons = document.querySelectorAll('.quiz-option');
-    const feedback = document.getElementById('quizFeedback');
-
-    buttons.forEach(btn => {
-      btn.classList.remove('correct', 'wrong');
-    });
-
-    if (isCorrect) {
-      button.classList.add('correct');
-      feedback.textContent = 'Muito bem! Metade é 1/2.';
-      feedback.style.color = '#166534';
-    } else {
-      button.classList.add('wrong');
-      feedback.textContent = 'Quase! Metade significa 1 de 2 partes iguais, ou seja, 1/2.';
-      feedback.style.color = '#991b1b';
-    }
-  }
-</script>
-
-</body>
+</script></body>
 </html>
+
+  
