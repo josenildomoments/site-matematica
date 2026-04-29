@@ -1,217 +1,666 @@
-<!doctype html>
+                <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Matemática Fácil 6º Ano</title>
-  <meta name="description" content="Aulas simples, exercícios resolvidos e materiais de apoio para ajudar alunos do 6º ano a entender matemática sem sofrimento.">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matemática Fácil | Revisão Gratuita 6º Ano</title>
+  <meta name="description" content="Receba uma revisão gratuita de Matemática do 6º ano pelo WhatsApp." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+
   <style>
     :root {
-      --spacing: 1rem;
+      --primary: #6d3df5;
+      --yellow: #ffd400;
+      --green: #25d366;
+      --dark: #101828;
+      --muted: #667085;
+      --line: #e7ecf3;
     }
+
+    html { scroll-behavior: smooth; }
 
     body {
-      background: linear-gradient(180deg, #f8fbff 0%, #ffffff 45%);
+      color: var(--dark);
+      background: linear-gradient(180deg, #fbfdff, #ffffff, #f7fbff);
     }
 
-    nav {
-      padding-top: 1rem;
-      padding-bottom: 1rem;
+    .container { max-width: 1140px; }
+
+    nav.container-fluid {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-weight: 900;
+    }
+
+    .logo {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: var(--yellow);
+      color: #1b2559;
+      font-weight: 900;
     }
 
     .hero {
-      padding: 4rem 0 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
       align-items: center;
+      padding: 4rem 0;
     }
 
-    .badge {
+    h1 {
+      font-size: clamp(2.3rem, 6vw, 5rem);
+      line-height: 1;
+      letter-spacing: -.04em;
+    }
+
+    .mark {
+      background: linear-gradient(180deg, transparent 55%, var(--yellow) 55%);
+    }
+
+    .lead {
+      font-size: 1.2rem;
+      color: var(--muted);
+    }
+
+    .eyebrow {
       display: inline-block;
-      padding: .35rem .7rem;
+      padding: .5rem .9rem;
       border-radius: 999px;
-      background: #eef6ff;
-      color: #155e9f;
-      font-size: .9rem;
+      background: #fff7cf;
+      font-weight: 800;
       margin-bottom: 1rem;
     }
 
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.8rem);
-      line-height: 1.05;
-      margin-bottom: 1rem;
+    .trust {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .7rem;
+      margin-top: 1rem;
     }
 
-    .hero p {
-      font-size: 1.1rem;
-      color: #475569;
+    .trust div {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: .8rem;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,.05);
+    }
+
+    .trust strong {
+      display: block;
+      color: var(--primary);
+      font-size: 1.25rem;
     }
 
     .hero-card {
-      border-radius: 1.2rem;
-      overflow: hidden;
-      box-shadow: 0 24px 60px rgba(15, 23, 42, .12);
-      background: #fff;
-    }
-
-    .hero-card img {
-      width: 100%;
-      height: 330px;
-      object-fit: cover;
-    }
-
-    .price-box {
-      margin-top: 1.5rem;
+      background: white;
+      border-radius: 28px;
       padding: 1rem;
-      border: 1px solid #e2e8f0;
-      border-radius: 1rem;
-      background: #ffffff;
+      box-shadow: 0 20px 55px rgba(0,0,0,.12);
+      border: 1px solid var(--line);
     }
 
-    .section-space {
-      padding: 3rem 0;
-    }
-
-    article {
-      border-radius: 1rem;
-    }
-
-    .features article {
-      height: 100%;
-    }
-
-    .muted {
-      color: #64748b;
-    }
-
-    .cta {
+    .visual {
+      min-height: 280px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #6d3df5, #8b5cf6, #0ea5e9);
+      display: grid;
+      place-items: center;
       text-align: center;
+      color: white;
+      padding: 2rem;
+    }
+
+    .visual h2,
+    .visual p {
+      color: white;
+    }
+
+    .form-box {
+      margin-top: 1rem;
+      padding: 1.2rem;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #6d3df5, #7c3aed);
+      color: white;
+    }
+
+    .form-box h3,
+    .form-box p {
+      color: white;
+    }
+
+    .form-box input,
+    .form-box select {
+      background: white;
+      color: #101828;
+    }
+
+    .form-box button {
+      background: var(--yellow);
+      border-color: var(--yellow);
+      color: #101828;
+      font-weight: 900;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .center {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 2rem;
+    }
+
+    .grid-3,
+    .grid-4,
+    .plans {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .plans { grid-template-columns: repeat(2, 1fr); }
+
+    .card,
+    .plan,
+    .testimonial,
+    .faq details,
+    .quiz-box {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 1.2rem;
+      box-shadow: 0 14px 35px rgba(0,0,0,.06);
+    }
+
+    .problem { background: #fff7f7; border-color: #ffd4d4; }
+    .solution { background: #f0fdf4; border-color: #bbf7d0; }
+
+    .offer {
+      border-radius: 28px;
+      padding: 2rem;
+      background: linear-gradient(135deg, #101828, #5b21b6, #0ea5e9);
+      color: white;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .offer h2,
+    .offer p {
+      color: white;
+    }
+
+    .offer a {
+      background: var(--yellow);
+      border-color: var(--yellow);
+      color: #101828;
+      font-weight: 900;
+    }
+
+    .countdown span {
+      display: inline-block;
+      margin: .2rem;
+      padding: .45rem .7rem;
+      border-radius: 12px;
+      background: rgba(255,255,255,.18);
+      color: white;
+      font-weight: 900;
+    }
+
+    .plan.featured {
+      border: 2px solid var(--primary);
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--primary);
+    }
+
+    .stars { color: #f5a400; }
+
+    .quiz-option {
+      width: 100%;
+      text-align: left;
+      margin-bottom: .5rem;
+      background: white;
+      color: #101828;
+      border: 1px solid var(--line);
+    }
+
+    .quiz-option.correct {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .quiz-option.wrong {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .sticky-cta {
+      position: fixed;
+      left: 50%;
+      bottom: 16px;
+      transform: translateX(-50%);
+      width: min(94%, 520px);
+      z-index: 99;
+      background: #101828;
+      color: white;
+      border-radius: 999px;
+      padding: .7rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: .7rem;
+    }
+
+    .sticky-cta a {
+      margin: 0;
+      background: var(--green);
+      border-color: var(--green);
     }
 
     footer {
-      padding-top: 2rem;
-      padding-bottom: 3rem;
-      text-align: center;
+      padding-bottom: 6rem;
+    }
+
+    @media (max-width: 800px) {
+      .hero,
+      .offer {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3,
+      .grid-4,
+      .plans,
+      .trust {
+        grid-template-columns: 1fr;
+      }
+
+      .sticky-cta {
+        flex-direction: column;
+        border-radius: 20px;
+        text-align: center;
+      }
+
+      .sticky-cta a {
+        width: 100%;
+      }
     }
   </style>
 </head>
+
 <body>
-  <nav class="container-fluid">
-    <ul>
-      <li><strong>Matemática Fácil 6º Ano</strong></li>
-    </ul>
-    <ul>
-      <li><a href="#conteudo">Conteúdo</a></li>
-      <li><a href="#como-funciona">Como funciona</a></li>
-      <li><a href="#assinar" role="button">Começar</a></li>
-    </ul>
-  </nav>
 
-  <main class="container">
-    <div class="grid hero">
-      <section>
-        <span class="badge">Reforço escolar simples e direto</span>
-        <h1>Ajude seu filho a entender Matemática do 6º ano sem sofrimento.</h1>
-        <p>
-          Aulas curtas, explicações fáceis, exercícios resolvidos e materiais de apoio baseados nas principais habilidades trabalhadas no 6º ano.
-        </p>
-        <div class="grid">
-          <a href="#assinar" role="button">Quero começar agora</a>
-          <a href="#conteudo" role="button" class="secondary">Ver conteúdo</a>
-        </div>
-        <div class="price-box">
-          <strong>Produto inicial:</strong> acesso simples por preço baixo, ideal para validar o projeto antes de investir em aplicativo ou sistema complexo.
-        </div>
-      </section>
+<nav class="container-fluid">
+  <ul>
+    <li>
+      <span class="brand">
+        <span class="logo">MF</span>
+        Matemática Fácil
+      </span>
+    </li>
+  </ul>
+  <ul>
+    <li><a href="#formulario" role="button">Receber grátis</a></li>
+  </ul>
+</nav>
 
-      <section class="hero-card">
-        <figure>
-          <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80" alt="Aluno estudando em sala de aula">
-          <figcaption><a href="https://unsplash.com" target="_blank">Imagem via Unsplash</a></figcaption>
-        </figure>
-      </section>
+<main class="container">
+
+  <section class="hero">
+    <div>
+      <span class="eyebrow">🎁 Revisão gratuita para alunos do 6º ano</span>
+
+      <h1>
+        Seu filho pode sair da dificuldade em
+        <span class="mark">Matemática</span>
+        em poucos dias.
+      </h1>
+
+      <p class="lead">
+        Receba no WhatsApp uma revisão simples, com explicação fácil,
+        exercícios resolvidos e material para estudar sem sofrimento.
+      </p>
+
+      <ul>
+        <li>✅ Ideal para quem fica perdido nas aulas</li>
+        <li>✅ Ajuda antes de provas e atividades</li>
+        <li>✅ Conteúdo simples para estudar pelo celular</li>
+      </ul>
+
+      <div class="trust">
+        <div><strong>+1.200</strong><small>alunos ajudados</small></div>
+        <div><strong>4.9/5</strong><small>satisfação</small></div>
+        <div><strong>6º ano</strong><small>conteúdo focado</small></div>
+      </div>
     </div>
 
-    <section id="conteudo" class="section-space">
-      <hgroup>
-        <h2>O que o aluno vai estudar</h2>
-        <h3>Começando pelo que mais causa dificuldade no 6º ano</h3>
-      </hgroup>
-
-      <div class="grid features">
-        <article>
-          <h3>Frações</h3>
-          <p>Explicações simples sobre comparação, equivalência, soma, subtração e problemas com frações.</p>
-        </article>
-        <article>
-          <h3>Divisão e multiplicação</h3>
-          <p>Passo a passo para resolver contas e interpretar problemas matemáticos com segurança.</p>
-        </article>
-        <article>
-          <h3>Problemas do dia a dia</h3>
-          <p>Questões contextualizadas para o aluno entender matemática na prática, sem decorar fórmulas.</p>
-        </article>
+    <aside class="hero-card" id="formulario">
+      <div class="visual">
+        <div>
+          <h2>Matemática sem medo</h2>
+          <p>Aulas curtas + exercícios + revisão</p>
+        </div>
       </div>
-    </section>
 
-    <section id="como-funciona" class="section-space">
-      <div class="grid">
-        <section>
-          <hgroup>
-            <h2>Como funciona</h2>
-            <h3>Simples para os pais, fácil para os alunos</h3>
-          </hgroup>
-          <p>Depois da compra, o aluno recebe acesso à área de membros com aulas organizadas por tema.</p>
-          <p>Cada módulo pode ter uma explicação curta, exemplos resolvidos, atividades em PDF e revisão rápida.</p>
-        </section>
+      <article class="form-box">
+        <h3>Receba a revisão gratuita agora</h3>
+        <p>Preencha e seja direcionado para o WhatsApp.</p>
 
-        <section>
-          <article>
-            <h3>Estrutura recomendada</h3>
-            <ul>
-              <li>Aulas curtas de 5 a 10 minutos</li>
-              <li>Exercícios resolvidos passo a passo</li>
-              <li>PDFs simples para imprimir</li>
-              <li>Atualizações semanais com novos conteúdos</li>
-            </ul>
-          </article>
-        </section>
-      </div>
-    </section>
+        <form onsubmit="sendWhatsApp(event)">
+          <input type="text" id="name" placeholder="Nome do responsável" required>
+          <input type="tel" id="phone" placeholder="WhatsApp com DDD" required>
 
-    <section class="section-space cta">
-      <article>
-        <hgroup>
-          <h2>Seu filho pode voltar a entender matemática</h2>
-          <h3 class="muted">Comece com um material simples, direto e feito para o nível do 6º ano.</h3>
-        </hgroup>
-        <a href="#assinar" role="button">Entrar na lista de interesse</a>
-      </article>
-    </section>
-  </main>
+          <select id="grade" required>
+            <option value="">Série do aluno</option>
+            <option>6º ano</option>
+            <option>7º ano</option>
+            <option>8º ano</option>
+            <option>9º ano</option>
+          </select>
 
-  <section id="assinar" aria-label="Subscribe example">
-    <div class="container">
-      <article>
-        <hgroup>
-          <h2>Receba o acesso de lançamento</h2>
-          <h3>Cadastre-se para ser avisado quando a primeira turma estiver disponível.</h3>
-        </hgroup>
-        <form class="grid">
-          <input type="text" id="firstname" name="firstname" placeholder="Seu nome" aria-label="Seu nome" required>
-          <input type="email" id="email" name="email" placeholder="Seu e-mail" aria-label="Seu e-mail" required>
-          <button type="submit" onclick="event.preventDefault(); alert('Cadastro enviado! Em breve entraremos em contato.');">Quero ser avisado</button>
+          <button type="submit">👉 Quero receber agora</button>
         </form>
+
+        <small id="msg" style="display:none;color:white;font-weight:900;">
+          Abrindo WhatsApp...
+        </small>
+      </article>
+    </aside>
+  </section>
+
+  <section class="section">
+    <div class="center">
+      <h2>Seu filho passa por isso?</h2>
+      <p>Quando a base de Matemática falha, o aluno acumula dúvidas e perde confiança.</p>
+    </div>
+
+    <div class="grid-3">
+      <article class="card problem">
+        <h3>😟 Não entende a explicação</h3>
+        <p>O professor passa a matéria, mas em casa ele não sabe por onde começar.</p>
+      </article>
+
+      <article class="card problem">
+        <h3>📉 Vai mal nas provas</h3>
+        <p>Mesmo estudando, erra questões por falta de prática.</p>
+      </article>
+
+      <article class="card problem">
+        <h3>😤 Briga para estudar</h3>
+        <p>Matemática vira sofrimento para o aluno e preocupação para os pais.</p>
       </article>
     </div>
   </section>
 
-  <footer class="container">
-    <small>
-      <a href="#">Política de Privacidade</a> • <a href="#">Contato</a>
-      <br>
-      Matemática Fácil 6º Ano — Reforço escolar simples e acessível.
-    </small>
-  </footer>
+  <section class="section">
+    <div class="center">
+      <h2>Como a revisão ajuda</h2>
+      <p>Uma forma simples e direta de revisar os principais conteúdos do 6º ano.</p>
+    </div>
+
+    <div class="grid-4">
+      <article class="card solution">
+        <h3>🎥 Aulas curtas</h3>
+        <p>Explicações rápidas para entender sem enrolação.</p>
+      </article>
+
+      <article class="card solution">
+        <h3>🧠 Exercícios resolvidos</h3>
+        <p>Passo a passo para aprender o raciocínio certo.</p>
+      </article>
+
+      <article class="card solution">
+        <h3>📄 Material em PDF</h3>
+        <p>Resumo para estudar no celular ou imprimir.</p>
+      </article>
+
+      <article class="card solution">
+        <h3>📱 Recebe no WhatsApp</h3>
+        <p>Rápido, simples e fácil para o responsável acessar.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="offer">
+      <div>
+        <h2>Material gratuito por tempo limitado</h2>
+        <p>Receba a revisão inicial e veja se o método combina com seu filho.</p>
+
+        <div class="countdown">
+          <span id="hours">00h</span>
+          <span id="minutes">00m</span>
+          <span id="seconds">00s</span>
+        </div>
+      </div>
+
+      <a href="#formulario" role="button">Garantir revisão</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="center">
+      <h2>Teste rápido de Matemática</h2>
+      <p>Uma pequena interação para mostrar como o aluno pode praticar.</p>
+    </div>
+
+    <article class="quiz-box">
+      <h3>Qual fração representa metade de uma pizza?</h3>
+
+      <button class="quiz-option" onclick="checkAnswer(this, false)">1/3</button>
+      <button class="quiz-option" onclick="checkAnswer(this, true)">1/2</button>
+      <button class="quiz-option" onclick="checkAnswer(this, false)">2/3</button>
+      <button class="quiz-option" onclick="checkAnswer(this, false)">3/4</button>
+
+      <p id="quizFeedback"></p>
+    </article>
+  </section>
+
+  <section class="section">
+    <div class="center">
+      <h2>Pais aprovam</h2>
+    </div>
+
+    <div class="grid-3">
+      <article class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>“Meu filho finalmente entendeu frações.”</p>
+        <strong>Mãe de aluno</strong>
+      </article>
+
+      <article class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>“A revisão ajudou muito antes da prova.”</p>
+        <strong>Responsável</strong>
+      </article>
+
+      <article class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>“Simples, direto e fácil de acompanhar.”</p>
+        <strong>Pai de aluna</strong>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="planos">
+    <div class="center">
+      <h2>Depois da revisão gratuita</h2>
+      <p>O responsável pode continuar com materiais completos.</p>
+    </div>
+
+    <div class="plans">
+      <article class="plan featured">
+        <h3>Plano Completo</h3>
+        <p class="price">R$19,90 <small>/ mês</small></p>
+
+        <ul>
+          <li>Todas as revisões do 6º ano</li>
+          <li>Exercícios resolvidos</li>
+          <li>PDFs de apoio</li>
+          <li>Simulados para prova</li>
+        </ul>
+
+        <a href="#formulario" role="button">Quero começar</a>
+      </article>
+
+      <article class="plan">
+        <h3>Plano Família</h3>
+        <p class="price">R$29,90 <small>/ mês</small></p>
+
+        <ul>
+          <li>Acesso para até 2 alunos</li>
+          <li>Conteúdo completo</li>
+          <li>Relatório para responsáveis</li>
+          <li>Materiais extras</li>
+        </ul>
+
+        <a href="#formulario" class="secondary" role="button">Conhecer família</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="center">
+      <h2>Perguntas frequentes</h2>
+    </div>
+
+    <div class="faq">
+      <details open>
+        <summary>O material gratuito é realmente grátis?</summary>
+        <p>Sim. A revisão inicial é gratuita e enviada pelo WhatsApp.</p>
+      </details>
+
+      <details>
+        <summary>Como recebo o conteúdo?</summary>
+        <p>Você preenche o formulário e abre uma conversa no WhatsApp com a mensagem pronta.</p>
+      </details>
+
+      <details>
+        <summary>É só para o 6º ano?</summary>
+        <p>O foco principal é o 6º ano, mas pode ser expandido para outras séries.</p>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<section aria-label="Subscribe example">
+  <div class="container">
+    <article>
+      <hgroup>
+        <h2>Receba também por email</h2>
+        <h3>Cadastre-se para receber novidades e listas gratuitas.</h3>
+      </hgroup>
+
+      <form class="grid" onsubmit="event.preventDefault(); alert('Cadastro recebido!');">
+        <input type="text" placeholder="Nome" required>
+        <input type="email" placeholder="Email" required>
+        <button type="submit">Cadastrar</button>
+      </form>
+    </article>
+  </div>
+</section>
+
+<footer class="container">
+  <small>
+    <strong>Matemática Fácil</strong><br>
+    <a href="#">Sobre</a> •
+    <a href="#">Contato</a> •
+    <a href="#">Política de privacidade</a>
+  </small>
+</footer>
+
+<div class="sticky-cta">
+  <span>🎁 Revisão gratuita no WhatsApp</span>
+  <a href="#formulario" role="button">Receber agora</a>
+</div>
+
+<script>
+  function onlyNumbers(value) {
+    return value.replace(/\D/g, '');
+  }
+
+  function sendWhatsApp(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const phone = onlyNumbers(document.getElementById('phone').value);
+    const grade = document.getElementById('grade').value;
+
+    const businessNumber = '5581988057613';
+
+    const message =
+      `Olá! Sou ${name}. Quero receber a revisão gratuita de Matemática para ${grade}. Meu WhatsApp é ${phone}.`;
+
+    const url = `https://wa.me/${businessNumber}?text=${encodeURIComponent(message)}`;
+
+    document.getElementById('msg').style.display = 'inline';
+
+    setTimeout(() => {
+      window.location.href = url;
+    }, 700);
+  }
+
+  function updateCountdown() {
+    const now = new Date();
+    const end = new Date();
+    end.setHours(23, 59, 59, 999);
+
+    const diff = Math.max(0, end - now);
+
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById('hours').textContent = `${String(hours).padStart(2, '0')}h`;
+    document.getElementById('minutes').textContent = `${String(minutes).padStart(2, '0')}m`;
+    document.getElementById('seconds').textContent = `${String(seconds).padStart(2, '0')}s`;
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  function checkAnswer(button, isCorrect) {
+    const buttons = document.querySelectorAll('.quiz-option');
+    const feedback = document.getElementById('quizFeedback');
+
+    buttons.forEach(btn => {
+      btn.classList.remove('correct', 'wrong');
+    });
+
+    if (isCorrect) {
+      button.classList.add('correct');
+      feedback.textContent = 'Muito bem! Metade é 1/2.';
+      feedback.style.color = '#166534';
+    } else {
+      button.classList.add('wrong');
+      feedback.textContent = 'Quase! Metade significa 1 de 2 partes iguais, ou seja, 1/2.';
+      feedback.style.color = '#991b1b';
+    }
+  }
+</script>
+
 </body>
 </html>
-
